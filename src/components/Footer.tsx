@@ -9,9 +9,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">KYNOVA<span className="text-muted-foreground/60">.</span></h3>
+            <h3 className="text-2xl tracking-tight mb-4">
+              <span className="font-bold">KY</span><span className="font-normal">NOVA</span><span className="text-black font-bold">.</span>
+            </h3>
             <p className="text-muted-foreground">
-              Revolutionieren Sie Ihre Lead-Bearbeitung mit KI-gestützter Telefonie.
+              Revolutionieren Sie Ihre Lead-Bearbeitung mit unseren KI gestützten Systemen.
             </p>
           </div>
 
@@ -20,23 +22,23 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#hero" className="text-muted-foreground hover:text-foreground transition-all hover:translate-x-0.5 inline-block">
+                <a href="/#hero" className="text-muted-foreground hover:text-foreground transition-all hover:translate-x-0.5 inline-block">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#problem" className="text-muted-foreground hover:text-foreground transition-all hover:translate-x-0.5 inline-block">
+                <a href="/#problem" className="text-muted-foreground hover:text-foreground transition-all hover:translate-x-0.5 inline-block">
                   Problem
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="text-muted-foreground hover:text-foreground transition-all hover:translate-x-0.5 inline-block">
+                <a href="/#solutions" className="text-muted-foreground hover:text-foreground transition-all hover:translate-x-0.5 inline-block">
                   Lösungen
                 </a>
               </li>
               <li>
-                <a href="#reviews" className="text-muted-foreground hover:text-foreground transition-all hover:translate-x-0.5 inline-block">
-                  Kundenstimmen
+                <a href="/#about" className="text-muted-foreground hover:text-foreground transition-all hover:translate-x-0.5 inline-block">
+                  Über Uns
                 </a>
               </li>
             </ul>
@@ -47,18 +49,21 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Rechtliches</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="/impressum" className="text-muted-foreground hover:text-foreground transition-colors">
                   Impressum
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="/datenschutz" className="text-muted-foreground hover:text-foreground transition-colors">
                   Datenschutz
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  AGB
+                <a 
+                  href="/#contact" 
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Kontakt
                 </a>
               </li>
             </ul>

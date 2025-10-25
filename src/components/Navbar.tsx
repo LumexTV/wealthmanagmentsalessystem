@@ -6,11 +6,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "Problem", href: "#problem" },
-    { name: "Lösungen", href: "#solutions" },
-    { name: "Kundenstimmen", href: "#reviews" },
-    { name: "Kontakt", href: "#contact" },
+    { name: "Home", href: "/#hero" },
+    { name: "Problem", href: "/#problem" },
+    { name: "Lösungen", href: "/#solutions" },
+    { name: "Über Uns", href: "/#about" },
+    { name: "Kontakt", href: "/#contact" },
   ];
 
   return (
@@ -30,10 +30,35 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Logo - Right side */}
-          <div className="flex-1 md:flex-none flex justify-end">
-            <a href="#hero" className="text-2xl font-bold tracking-tight">
-              KYNOVA<span className="text-muted-foreground/60">.</span>
+          {/* Logo and CTA Button - Right side */}
+          <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
+            <Button 
+              size="sm" 
+              className="hidden md:flex text-sm px-4 py-2 rounded-full hover-glow transition-all"
+              onClick={() => {
+                // Wenn wir auf der Hauptseite sind, scrollen wir direkt
+                if (window.location.pathname === '/') {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                } else {
+                  // Sonst zur Hauptseite navigieren und dann scrollen
+                  window.location.href = '/';
+                  // Nach dem Laden der Seite zum Kontakt scrollen
+                  setTimeout(() => {
+                    const element = document.getElementById('contact');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }, 100);
+                }
+              }}
+            >
+              Gratis Beratung
+            </Button>
+            <a href="/#hero" className="text-2xl tracking-tight">
+              <span className="font-bold">KY</span><span className="font-normal">NOVA</span><span className="text-black font-bold">.</span>
             </a>
           </div>
 
@@ -63,6 +88,32 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            <Button 
+              size="sm" 
+              className="w-full text-sm px-4 py-2 rounded-full hover-glow transition-all mt-4"
+              onClick={() => {
+                // Wenn wir auf der Hauptseite sind, scrollen wir direkt
+                if (window.location.pathname === '/') {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                } else {
+                  // Sonst zur Hauptseite navigieren und dann scrollen
+                  window.location.href = '/';
+                  // Nach dem Laden der Seite zum Kontakt scrollen
+                  setTimeout(() => {
+                    const element = document.getElementById('contact');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }, 100);
+                }
+                setIsOpen(false);
+              }}
+            >
+              Gratis Beratung
+            </Button>
           </div>
         </div>
       )}

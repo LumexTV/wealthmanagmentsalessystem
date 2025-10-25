@@ -29,10 +29,10 @@ const SolutionsSection = () => {
     <section id="solutions" className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 hover:scale-105 transition-transform duration-500">
             Unsere Lösungen
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
             KI-gestützte Telefonie, die Ihre Lead-Bearbeitung revolutioniert
           </p>
         </div>
@@ -41,18 +41,18 @@ const SolutionsSection = () => {
           {solutions.map((solution, index) => (
             <Card 
               key={index} 
-              className="p-8 lg:p-10 hover-lift transition-all duration-300 animate-slide-up group gradient-border"
+              className="p-8 lg:p-10 hover-lift transition-all duration-500 animate-slide-up group gradient-border hover:shadow-xl hover:border-primary/30"
               style={{ animationDelay: `${index * 0.1}s`, boxShadow: 'var(--shadow-sm)' }}
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-all" style={{ boxShadow: 'var(--shadow-xs)' }}>
-                <solution.icon className="h-7 w-7 text-primary-foreground" />
+              <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" style={{ boxShadow: 'var(--shadow-xs)' }}>
+                <solution.icon className="h-7 w-7 text-primary-foreground group-hover:scale-110 transition-transform duration-300" />
               </div>
               
-              <h3 className="text-xl md:text-2xl font-bold mb-4">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
                 {solution.title}
               </h3>
               
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
                 {solution.description}
               </p>
             </Card>

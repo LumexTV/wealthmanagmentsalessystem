@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowDown, Lock, Shield, ShieldCheck } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -18,27 +18,60 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-background/30" />
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center animate-fade-in">
-        <div className="inline-block px-4 py-2 mb-8 bg-muted rounded-full text-xs font-medium tracking-wide uppercase">
-          #1 Telefon-KI für Immobilienmakler
-        </div>
-        
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6" style={{ textShadow: '0 2px 10px rgba(0, 0, 0, 0.03)' }}>
-          KYNOVA<span className="text-muted-foreground/50">.</span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-          Reaktivieren Sie bestehende Leads und qualifizieren Sie neue Anfragen automatisch – rund um die Uhr
-        </p>
+      <div className="w-full px-6 lg:px-8 text-center">
+        <div className="flex justify-center mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-muted rounded-full text-xs font-medium tracking-wide uppercase hover:scale-105 transition-transform duration-300 hover:shadow-lg">
+            <ShieldCheck className="w-5 h-5 animate-pulse" />
+            DSGVO KONFORM
+          </div>
+        </div>   
 
-        <Button 
-          size="lg" 
-          className="group text-base px-8 py-6 rounded-full hover-glow transition-all"
-          style={{ boxShadow: 'var(--shadow-md)' }}
-        >
-          Erstgespräch vereinbaren
-          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-        </Button>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8 max-w-4xl mx-auto leading-tight animate-fade-in" style={{ textShadow: '0 2px 10px rgb(184, 182, 182)', animationDelay: '0.2s' }}>
+          Wir reaktivieren und qualifizieren die <span className="drop-shadow-lg bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent animate-gradient-x">Leads</span> von Immobilienmaklern.
+        </h1>
+
+        <div className="flex items-center justify-center mb-10 text-lg md:text-xl font-medium animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="flex items-center group">
+            <span className="absolute left-1/2 transform -translate-x-24 -translate-y-0.5 group-hover:scale-105 transition-transform duration-300">Mehr Zeit</span>
+            <span className="transform translate-y-[-2px] animate-pulse">|</span>
+            <span className="absolute right-1/2 transform translate-x-32 -translate-y-0.5 group-hover:scale-105 transition-transform duration-300">Mehr Umsatz</span>
+          </div>
+        </div>
+
+
+
+
+        <div className="flex items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <Button 
+            size="lg" 
+            className="group text-base px-8 py-6 rounded-full hover-glow transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            style={{ boxShadow: 'var(--shadow-md)' }}
+            onClick={() => {
+              const element = document.getElementById('contact');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            Erstgespräch vereinbaren
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+          </Button>
+          
+          <Button 
+            size="lg" 
+            variant="outline"
+            className="group text-base px-8 py-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-primary/50"
+            onClick={() => {
+              const element = document.getElementById('problem');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            Mehr ansehen
+            <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
+          </Button>
+        </div>
       </div>
     </section>
   );
