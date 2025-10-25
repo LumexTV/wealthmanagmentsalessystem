@@ -41,10 +41,10 @@ const SolutionsSection = () => {
           {solutions.map((solution, index) => (
             <Card 
               key={index} 
-              className="p-8 lg:p-10 hover:shadow-lg transition-all duration-300 animate-slide-up group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="p-8 lg:p-10 hover-lift transition-all duration-300 animate-slide-up group gradient-border"
+              style={{ animationDelay: `${index * 0.1}s`, boxShadow: 'var(--shadow-sm)' }}
             >
-              <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-all" style={{ boxShadow: 'var(--shadow-xs)' }}>
                 <solution.icon className="h-7 w-7 text-primary-foreground" />
               </div>
               

@@ -46,13 +46,13 @@ const ReviewsSection = () => {
           {reviews.map((review, index) => (
             <Card 
               key={index} 
-              className="p-8 hover:shadow-lg transition-all duration-300 animate-slide-up relative"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className="p-8 hover-lift transition-all duration-300 animate-slide-up relative group"
+              style={{ animationDelay: `${index * 0.15}s`, boxShadow: 'var(--shadow-sm)' }}
             >
-              <Quote className="absolute top-6 right-6 h-10 w-10 text-muted opacity-20" />
+              <Quote className="absolute top-6 right-6 h-10 w-10 text-muted opacity-20 group-hover:opacity-30 transition-opacity" />
               
               <div className="flex items-center gap-4 mb-6">
-                <Avatar className="h-14 w-14 border-2 border-border">
+                <Avatar className="h-14 w-14 border-2 border-border group-hover:border-primary/20 transition-colors" style={{ boxShadow: 'var(--shadow-xs)' }}>
                   <AvatarFallback className="bg-primary text-primary-foreground text-lg font-semibold">
                     {review.initials}
                   </AvatarFallback>

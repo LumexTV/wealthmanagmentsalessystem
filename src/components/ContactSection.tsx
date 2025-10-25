@@ -56,7 +56,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <Card className="p-8 lg:p-10 animate-slide-up">
+          <Card className="p-8 lg:p-10 animate-slide-up" style={{ boxShadow: 'var(--shadow-md)' }}>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name">Name *</Label>
@@ -111,7 +111,7 @@ const ContactSection = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full" size="lg">
+              <Button type="submit" className="w-full hover-glow" size="lg" style={{ boxShadow: 'var(--shadow-sm)' }}>
                 Nachricht senden
               </Button>
             </form>
@@ -130,8 +130,8 @@ const ContactSection = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors" style={{ boxShadow: 'var(--shadow-xs)' }}>
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -145,8 +145,8 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors" style={{ boxShadow: 'var(--shadow-xs)' }}>
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -160,8 +160,8 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors" style={{ boxShadow: 'var(--shadow-xs)' }}>
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>

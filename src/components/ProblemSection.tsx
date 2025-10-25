@@ -32,7 +32,7 @@ const ProblemSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {/* Before */}
-          <Card className="p-8 lg:p-10 animate-slide-up border-2 border-border hover:shadow-lg transition-shadow">
+          <Card className="p-8 lg:p-10 animate-slide-up border-2 border-border hover-lift" style={{ boxShadow: 'var(--shadow-sm)' }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
                 <X className="h-6 w-6 text-destructive" />
@@ -53,7 +53,7 @@ const ProblemSection = () => {
           </Card>
 
           {/* After */}
-          <Card className="p-8 lg:p-10 animate-slide-up border-2 border-primary hover:shadow-lg transition-shadow" style={{ animationDelay: "0.2s" }}>
+          <Card className="p-8 lg:p-10 animate-slide-up border-2 border-primary hover-lift gradient-border" style={{ animationDelay: "0.2s", boxShadow: 'var(--shadow-md)' }}>
             <div className="flex items-center gap-3 mb-8">
               <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
                 <Check className="h-6 w-6 text-primary-foreground" />
