@@ -9,18 +9,22 @@ import { useState } from "react";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
+    firma: "",
     email: "",
-    phone: "",
+    telefon: "",
+    website: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
+    // Validierung
+    if (!formData.name || !formData.firma || !formData.email || !formData.telefon || !formData.message) {
       toast({
         title: "Fehler",
         description: "Bitte füllen Sie alle Pflichtfelder aus.",
@@ -29,13 +33,44 @@ const ContactSection = () => {
       return;
     }
 
-    toast({
-      title: "Nachricht gesendet!",
-      description: "Wir melden uns in Kürze bei Ihnen.",
-    });
+    // Email-Validierung
+    if (!formData.email.includes('@')) {
+      toast({
+        title: "Fehler",
+        description: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://n8n.kynova.de/webhook/immomakler', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'websiteformular': 'canteen-sudoku-explode-culpable-unaltered-eliminate5-kindling',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Fehler beim Senden');
+      }
+
+      // Reset form und zeige Bestätigung
+      setFormData({ name: "", firma: "", email: "", telefon: "", website: "", message: "" });
+      setIsSubmitted(true);
+    } catch (error) {
+      toast({
+        title: "Fehler",
+        description: "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -57,7 +92,29 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
           <Card className="p-8 lg:p-10 animate-slide-up group hover:shadow-xl transition-all duration-500" style={{ boxShadow: 'var(--shadow-md)', animationDelay: '0.1s' }}>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {isSubmitted ? (
+              <div className="text-center py-12 animate-fade-in">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  Nachricht erfolgreich gesendet!
+                </h3>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Vielen Dank für Ihre Anfrage. Wir melden uns in Kürze bei Ihnen.
+                </p>
+                <Button 
+                  onClick={() => setIsSubmitted(false)}
+                  className="hover-glow hover:scale-105 transition-all duration-300"
+                  size="lg"
+                >
+                  Neue Nachricht senden
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
               <div className="group/field">
                 <Label htmlFor="name" className="group-focus/field:text-primary transition-colors duration-300">Name *</Label>
                 <Input
@@ -66,6 +123,19 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Ihr vollständiger Name"
+                  className="mt-2 focus:scale-105 transition-transform duration-300 focus:shadow-lg"
+                  required
+                />
+              </div>
+
+              <div className="group/field">
+                <Label htmlFor="firma" className="group-focus/field:text-primary transition-colors duration-300">Firma *</Label>
+                <Input
+                  id="firma"
+                  name="firma"
+                  value={formData.firma}
+                  onChange={handleChange}
+                  placeholder="Ihr Firmenname"
                   className="mt-2 focus:scale-105 transition-transform duration-300 focus:shadow-lg"
                   required
                 />
@@ -86,14 +156,28 @@ const ContactSection = () => {
               </div>
 
               <div className="group/field">
-                <Label htmlFor="phone" className="group-focus/field:text-primary transition-colors duration-300">Telefon</Label>
+                <Label htmlFor="telefon" className="group-focus/field:text-primary transition-colors duration-300">Telefon *</Label>
                 <Input
-                  id="phone"
-                  name="phone"
+                  id="telefon"
+                  name="telefon"
                   type="tel"
-                  value={formData.phone}
+                  value={formData.telefon}
                   onChange={handleChange}
                   placeholder="+49 123 456789"
+                  className="mt-2 focus:scale-105 transition-transform duration-300 focus:shadow-lg"
+                  required
+                />
+              </div>
+
+              <div className="group/field">
+                <Label htmlFor="website" className="group-focus/field:text-primary transition-colors duration-300">Website</Label>
+                <Input
+                  id="website"
+                  name="website"
+                  type="text"
+                  value={formData.website}
+                  onChange={handleChange}
+                  placeholder="Ihre Website"
                   className="mt-2 focus:scale-105 transition-transform duration-300 focus:shadow-lg"
                 />
               </div>
@@ -111,10 +195,17 @@ const ContactSection = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full hover-glow hover:scale-105 transition-all duration-300 hover:shadow-xl" size="lg" style={{ boxShadow: 'var(--shadow-sm)' }}>
-                Nachricht senden
+              <Button 
+                type="submit" 
+                className="w-full hover-glow hover:scale-105 transition-all duration-300 hover:shadow-xl" 
+                size="lg" 
+                style={{ boxShadow: 'var(--shadow-sm)' }}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
               </Button>
-            </form>
+              </form>
+            )}
           </Card>
 
           {/* Contact Info */}
