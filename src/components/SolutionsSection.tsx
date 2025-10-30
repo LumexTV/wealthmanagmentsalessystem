@@ -1,4 +1,4 @@
-import { Phone, CheckCircle, Clock, TrendingUp } from "lucide-react";
+import { Phone, CheckCircle, Clock, MessageCircle } from "lucide-react";
 import { Card } from "./ui/card";
 
 const SolutionsSection = () => {
@@ -19,9 +19,9 @@ const SolutionsSection = () => {
       description: "Kein Lead wird mehr verpasst. Unsere Telefon-KI ist rund um die Uhr für Ihre Kunden erreichbar.",
     },
     {
-      icon: TrendingUp,
-      title: "Skalierbare Effizienz",
-      description: "Bearbeiten Sie mehr Leads ohne zusätzliche Personalkosten. Wachsen Sie ohne Ihre Kosten proportional zu erhöhen.",
+      icon: MessageCircle,
+      title: "WhatsApp-Funnel",
+      description: "Jeder neue Lead wird automatisch per WhatsApp kontaktiert. Höhere Conversion durch direkte, persönliche Kommunikation auf dem bevorzugten Kanal Ihrer Kunden.",
     },
   ];
 

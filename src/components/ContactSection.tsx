@@ -3,7 +3,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { Card } from "./ui/card";
-import { Mail, Globe, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
@@ -238,17 +238,15 @@ const ContactSection = () => {
 
               <div className="flex items-start gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors" style={{ boxShadow: 'var(--shadow-xs)' }}>
-                  <Globe className="h-6 w-6 text-primary" />
+                  <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-semibold mb-1">Website</p>
+                  <p className="font-semibold mb-1">Telefon</p>
                   <a 
-                    href="https://kynova.de" 
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="tel:+4915565670871" 
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    kynova.de
+                    +49 15565 670871
                   </a>
                 </div>
               </div>
