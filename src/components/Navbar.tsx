@@ -7,14 +7,13 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/#hero" },
-    { name: "Problem", href: "/#problem" },
-    { name: "Lösungen", href: "/#solutions" },
-    { name: "Über Uns", href: "/#about" },
-    { name: "Kontakt", href: "/#contact" },
+    { name: "Infrastructure", href: "/#mechanism" },
+    { name: "Partnership", href: "/#offer" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-xl border-b border-border/50" style={{ boxShadow: 'var(--shadow-sm)' }}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200" style={{ boxShadow: 'var(--shadow-sm)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Navigation Links - Left side */}
@@ -23,7 +22,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+                className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors"
               >
                 {link.name}
               </a>
@@ -34,40 +33,24 @@ const Navbar = () => {
           <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
             <Button 
               size="sm" 
-              className="hidden md:flex text-sm px-4 py-2 rounded-full hover-glow transition-all"
+              className="hidden md:flex text-sm px-4 py-2 rounded-full hover-glow transition-all bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
               onClick={() => {
-                // Wenn wir auf der Hauptseite sind, scrollen wir direkt
-                if (window.location.pathname === '/') {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                } else {
-                  // Sonst zur Hauptseite navigieren und dann scrollen
-                  window.location.href = '/';
-                  // Nach dem Laden der Seite zum Kontakt scrollen
-                  setTimeout(() => {
-                    const element = document.getElementById('contact');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }, 100);
-                }
+                window.location.href = 'https://cal.com/marticsolutions/get-started';
               }}
             >
-              Gratis Beratung
+              Get Started
             </Button>
-            <a href="/#hero" className="text-2xl tracking-tight">
-              <span className="font-bold">KY</span><span className="font-normal">NOVA</span><span className="text-black font-bold">.</span>
+            <a href="/#hero" className="flex items-center">
+              <span className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Martic Solutions</span>
             </a>
           </div>
 
           {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
@@ -76,13 +59,13 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-border animate-fade-in">
+        <div className="md:hidden border-t border-gray-200 animate-fade-in">
           <div className="px-6 py-4 space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="block text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
+                className="block text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -90,29 +73,13 @@ const Navbar = () => {
             ))}
             <Button 
               size="sm" 
-              className="w-full text-sm px-4 py-2 rounded-full hover-glow transition-all mt-4"
+              className="w-full text-sm px-4 py-2 rounded-full hover-glow transition-all mt-4 bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
               onClick={() => {
-                // Wenn wir auf der Hauptseite sind, scrollen wir direkt
-                if (window.location.pathname === '/') {
-                  const element = document.getElementById('contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                } else {
-                  // Sonst zur Hauptseite navigieren und dann scrollen
-                  window.location.href = '/';
-                  // Nach dem Laden der Seite zum Kontakt scrollen
-                  setTimeout(() => {
-                    const element = document.getElementById('contact');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }, 100);
-                }
+                window.location.href = 'https://cal.com/marticsolutions/get-started';
                 setIsOpen(false);
               }}
             >
-              Gratis Beratung
+              Get Started
             </Button>
           </div>
         </div>

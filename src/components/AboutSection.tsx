@@ -1,95 +1,48 @@
 import { Card } from "./ui/card";
+import { CheckCircle } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="offer" className="py-24 lg:py-32 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden text-white">
+      <div className="absolute inset-0 bg-soft-gradient" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 hover:scale-105 transition-transform duration-500">
-            Über Uns
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Das Team hinter KYNOVA - Ihre Experten für KI-gestützte Lead-Bearbeitung
-          </p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl mb-6 text-white">Partner with Martic Solutions.</h2>
         </div>
-
-        {/* First Block - Image Left, Text Right */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          <div className="order-2 lg:order-1">
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 group">
-              <div className="aspect-square bg-gradient-to-br from-muted to-muted/60 flex items-center justify-center">
-                <img 
-                  src="/images/DanielSchmuch_blackwhite.jpg" 
-                  alt="Daniel Schmuch - Geschäftsführer & Gründer" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-            </Card>
-          </div>
-          
-          <div className="order-1 lg:order-2 space-y-6">
-            <h3 className="text-2xl md:text-3xl font-bold hover:text-primary transition-colors duration-300">
-              Daniel Schmuch - CEO & Co-Founder
-            </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Daniel kombiniert 15 Jahre Erfahrung in Führung, Prozess- und Projektmanagement 
-              mit einem starken Gespür für KI und Automatisierung – er denkt die Immobilienwelt 
-              strategisch, effizient und zukunftsorientiert.
-            </p>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 group">
-                <div className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="text-base">Sales & Vertriebsleitung</span>
-              </div>
-              <div className="flex items-center gap-3 group">
-                <div className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="text-base">Strategische Unternehmensführung</span>
-              </div>
-              <div className="flex items-center gap-3 group">
-                <div className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="text-base">Lead-Generierung & Management</span>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-full px-4 py-2 border border-green-500/30 mb-4">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-white">Performance Guarantee</span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Second Block - Text Left, Image Right */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-bold hover:text-primary transition-colors duration-300">
-              Luka Martic - CTO & Co-Founder
-            </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Als technischer Visionär und KI-Experte entwickelt Luka die innovativen 
-              Lösungen, die KYNOVA zu einem führenden Anbieter für automatisierte 
-              Lead-Bearbeitung in der Immobilienbranche machen.
+            <p className="text-xl md:text-2xl mb-6 leading-relaxed text-center">
+              We deploy our Owner-Direct Acquisition System to secure <span className="text-blue-accent font-semibold">4-5 Qualified "Profit Extraction" Consultations</span> with 7-Figure Founders within 90 days.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 group">
-                <div className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="text-base">KI-Entwicklung & Technologie</span>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-4">
+                <CheckCircle className="h-6 w-6 text-blue-accent mt-1 flex-shrink-0" />
+                <span className="text-white/90">Exclusive territory protection</span>
               </div>
-              <div className="flex items-center gap-3 group">
-                <div className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="text-base">Software-Architektur & Systeme</span>
-              </div>
-              <div className="flex items-center gap-3 group">
-                <div className="w-2 h-2 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                <span className="text-base">Innovation & Produktentwicklung</span>
+              <div className="flex items-start gap-4">
+                <CheckCircle className="h-6 w-6 text-blue-accent mt-1 flex-shrink-0" />
+                <span className="text-white/90">No retainer risk</span>
               </div>
             </div>
           </div>
           
-          <div>
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 group">
-              <div className="aspect-square bg-gradient-to-br from-muted to-muted/60 flex items-center justify-center">
-                <img 
-                  src="/images/LukaMartic_blackwhite.png" 
-                  alt="Luka Martic - Unser Geschäftsführer" 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-            </Card>
+          <div className="text-center">
+            <p className="text-sm text-white/70 mb-8">
+              If we don't deliver 4-5 qualified consultations in 90 days, we continue at no cost until we do.
+            </p>
+            <a
+              href="https://cal.com/marticsolutions/get-started"
+              className="inline-flex items-center justify-center h-14 px-12 rounded-full bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70 transition-all duration-300 text-lg font-semibold shadow-premium hover-glow"
+            >
+              Secure Your Territory
+            </a>
           </div>
         </div>
       </div>
