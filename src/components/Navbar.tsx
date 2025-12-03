@@ -43,22 +43,23 @@ const Navbar = () => {
           {/* Logo and CTA Button - Right side */}
           <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
             <ToggleGroup
+              aria-label="Language"
               type="single"
               value={locale}
               onValueChange={(v) => v && setLocale(v as "en" | "de")}
               variant="outline"
               size="sm"
-              className="hidden md:flex h-9 w-28 rounded-full border border-gray-200 bg-white/90 backdrop-blur px-1 shadow-sm"
+              className="hidden md:flex h-9 w-28 rounded-full border border-gray-300 bg-white px-1"
             >
               <ToggleGroupItem
                 value="en"
-                className="rounded-full text-xs font-semibold tracking-wide text-gray-700 data-[state=on]:bg-gray-900 data-[state=on]:text-white"
+                className="rounded-full text-xs font-medium tracking-wide text-gray-700 hover:bg-gray-100 transition-colors data-[state=on]:bg-gray-900 data-[state=on]:text-white"
               >
                 EN
               </ToggleGroupItem>
               <ToggleGroupItem
                 value="de"
-                className="rounded-full text-xs font-semibold tracking-wide text-gray-700 data-[state=on]:bg-gray-900 data-[state=on]:text-white"
+                className="rounded-full text-xs font-medium tracking-wide text-gray-700 hover:bg-gray-100 transition-colors data-[state=on]:bg-gray-900 data-[state=on]:text-white"
               >
                 DE
               </ToggleGroupItem>
@@ -105,15 +106,16 @@ const Navbar = () => {
             ))}
             <div className="flex items-center justify-center py-2">
               <ToggleGroup
+                aria-label="Language"
                 type="single"
                 value={locale}
                 onValueChange={(v) => v && setLocale(v as "en" | "de")}
                 variant="outline"
                 size="sm"
-                className="h-9 w-28 rounded-full border border-gray-200 bg-white/90 px-1 shadow-sm"
+                className="h-9 w-28 rounded-full border border-gray-300 bg-white px-1"
               >
-                <ToggleGroupItem value="en" className="rounded-full text-xs font-semibold tracking-wide text-gray-700 data-[state=on]:bg-gray-900 data-[state=on]:text-white">EN</ToggleGroupItem>
-                <ToggleGroupItem value="de" className="rounded-full text-xs font-semibold tracking-wide text-gray-700 data-[state=on]:bg-gray-900 data-[state=on]:text-white">DE</ToggleGroupItem>
+                <ToggleGroupItem value="en" className="rounded-full text-xs font-medium tracking-wide text-gray-700 hover:bg-gray-100 transition-colors data-[state=on]:bg-gray-900 data-[state=on]:text-white">EN</ToggleGroupItem>
+                <ToggleGroupItem value="de" className="rounded-full text-xs font-medium tracking-wide text-gray-700 hover:bg-gray-100 transition-colors data-[state=on]:bg-gray-900 data-[state=on]:text-white">DE</ToggleGroupItem>
               </ToggleGroup>
             </div>
             <Button 
