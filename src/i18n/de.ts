@@ -7,7 +7,7 @@ export const de = {
     cta: "Loslegen",
   },
   hero: {
-    badge: "Exklusiver Zugang für Q1 2026: Nur noch 2 Mandate verfügbar.",
+    badge: "Q1 2026: Nur 2 Mandate verfügbar",
     headline: "Sichern Sie sich den Mandatszugang, der dem Wettbewerb verborgen bleibt.",
     subline:
       "Während andere auf Zufallsempfehlungen warten, erhalten Sie durch unsere Infrastruktur exklusiven Zugriff auf solvente Unternehmer und GmbH‑Geschäftsführer mit aktuellem Liquiditätsbedarf – bereit für Vermögenssicherung und strategische Allokation.",

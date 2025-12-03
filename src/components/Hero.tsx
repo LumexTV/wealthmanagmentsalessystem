@@ -16,7 +16,7 @@ const Hero = () => {
           <Button
             variant="secondary"
             size="sm"
-            className="rounded-full px-6 py-3 premium-border bg-gradient-to-r from-blue-accent/10 to-primary/10 text-blue-accent hover:from-blue-accent/20 hover:to-primary/20 hover-glow shadow-lg font-semibold"
+            className="rounded-full h-10 w-[320px] whitespace-nowrap premium-border bg-gradient-to-r from-blue-accent/10 to-primary/10 text-blue-accent hover:from-blue-accent/20 hover:to-primary/20 hover-glow shadow-lg font-semibold"
           >
             {t.hero.badge}
           </Button>
@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="flex items-center justify-center gap-4 mt-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
           <Button
             size="lg"
-            className="group text-lg px-12 py-8 rounded-full hover-glow transition-all duration-300 hover:scale-105 shadow-premium bg-gradient-to-r from-primary to-primary/80 text-white font-semibold premium-border"
+            className="group text-lg h-12 w-56 whitespace-nowrap rounded-full hover-glow transition-all duration-300 hover:scale-105 shadow-premium bg-gradient-to-r from-primary to-primary/80 text-white font-semibold premium-border"
             style={{ boxShadow: 'var(--shadow-md)' }}
             onClick={() => {
               window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
@@ -43,7 +43,7 @@ const Hero = () => {
           <Button
             size="lg"
             variant="secondary"
-            className="group text-lg px-12 py-8 rounded-full hover-glow transition-all duration-300 hover:scale-105 shadow-premium bg-white text-primary premium-border"
+            className="group text-lg h-12 w-56 whitespace-nowrap rounded-full hover-glow transition-all duration-300 hover:scale-105 shadow-premium bg-white text-primary premium-border"
             style={{ boxShadow: 'var(--shadow-md)' }}
             onClick={() => {
               const element = document.getElementById('mechanism');

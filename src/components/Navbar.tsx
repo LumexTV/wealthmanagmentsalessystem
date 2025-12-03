@@ -118,7 +118,7 @@ const Navbar = () => {
                 setIsOpen(false);
               }}
             >
-              {labels[locale].cta}
+              {t.navbar.cta}
             </Button>
           </div>
         </div>
