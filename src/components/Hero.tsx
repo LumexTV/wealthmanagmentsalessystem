@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { ArrowRight, ArrowDown } from "lucide-react";
 
 const Hero = () => {
+  const t = useT();
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       <div className="absolute inset-0 -z-10">
@@ -17,14 +18,14 @@ const Hero = () => {
             size="sm"
             className="rounded-full px-6 py-3 premium-border bg-gradient-to-r from-blue-accent/10 to-primary/10 text-blue-accent hover:from-blue-accent/20 hover:to-primary/20 hover-glow shadow-lg font-semibold"
           >
-            2 Spots Remaining for Q4 2025
+            {t.hero.badge}
           </Button>
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight mb-8 max-w-4xl mx-auto leading-[1.15] pb-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          Own the Dealflow That Competitors Never See.
+          {t.hero.headline}
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
-          While competitors chase the same referrals, you’ll access an exclusive pipeline of founder‑operators in active liquidity events - ready for capital preservation and strategic deployment.
+          {t.hero.subline}
         </p>
 
         <div className="flex items-center justify-center gap-4 mt-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -36,7 +37,7 @@ const Hero = () => {
               window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
             }}
           >
-            Book Intro Call
+            {t.hero.cta_book}
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Button>
           <Button
@@ -51,7 +52,7 @@ const Hero = () => {
               }
             }}
           >
-            See How It Works
+            {t.hero.cta_how}
             <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform duration-300" />
           </Button>
         </div>
@@ -61,3 +62,4 @@ const Hero = () => {
 };
 
 export default Hero;
+import { useT } from "../hooks/use-t";

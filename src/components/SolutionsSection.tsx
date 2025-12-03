@@ -2,6 +2,7 @@ import { Radar, Filter, CalendarCheck } from "lucide-react";
 import { Card } from "./ui/card";
 
 const SolutionsSection = () => {
+  const t = useT();
   return (
     <section id="mechanism" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background Image */}
@@ -25,10 +26,8 @@ const SolutionsSection = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         {/* Header Section */}
         <div className="text-center mb-16 animate-slide-up overflow-visible pt-1" style={{ animationDelay: '0.1s' }}>
-          <h2 className="inline-block text-3xl md:text-5xl lg:text-6xl mb-6 leading-[1.2] pb-2 gradient-text-animate bg-gradient-to-r from-slate-900 via-blue-600 to-slate-900 bg-clip-text text-transparent bg-[length:200%_auto]">Programmatic Capital Sourcing.</h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-            We don’t sell lists. We build infrastructure that connects you to the source of capital.
-          </p>
+          <h2 className="inline-block text-3xl md:text-5xl lg:text-6xl mb-6 leading-[1.2] pb-2 gradient-text-animate bg-gradient-to-r from-slate-900 via-blue-600 to-slate-900 bg-clip-text text-transparent bg-[length:200%_auto]">{t.solutions.title}</h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">{t.solutions.subtitle}</p>
         </div>
 
         {/* Process Flow */}
@@ -46,11 +45,11 @@ const SolutionsSection = () => {
                 </div>
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-xl md:text-2xl text-blue-accent">The Signal</h3>
-                    <span className="px-3 py-1 bg-gradient-to-r from-primary/10 to-blue-accent/10 text-primary text-sm font-medium rounded-full border border-primary/20">Identify</span>
+                    <h3 className="text-xl md:text-2xl text-blue-accent">{t.solutions.steps.signal.title}</h3>
+                    <span className="px-3 py-1 bg-gradient-to-r from-primary/10 to-blue-accent/10 text-primary text-sm font-medium rounded-full border border-primary/20">{t.solutions.steps.signal.tag}</span>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">We monitor liquidity events and high‑cash‑flow sectors</p>
-                  <p className="text-muted-foreground leading-relaxed mt-3">to identify founder‑operators with immediate capital deployment needs—before they hit the open market.</p>
+                  <p className="text-muted-foreground leading-relaxed">{t.solutions.steps.signal.p1}</p>
+                  <p className="text-muted-foreground leading-relaxed mt-3">{t.solutions.steps.signal.p2}</p>
                 </div>
               </div>
             </Card>
@@ -63,11 +62,11 @@ const SolutionsSection = () => {
                 </div>
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-xl md:text-2xl text-blue-accent">The Filter</h3>
-                    <span className="px-3 py-1 bg-gradient-to-r from-primary/10 to-blue-accent/10 text-primary text-sm font-medium rounded-full border border-primary/20">Qualify</span>
+                    <h3 className="text-xl md:text-2xl text-blue-accent">{t.solutions.steps.filter.title}</h3>
+                    <span className="px-3 py-1 bg-gradient-to-r from-primary/10 to-blue-accent/10 text-primary text-sm font-medium rounded-full border border-primary/20">{t.solutions.steps.filter.tag}</span>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">We do not rely on cold lists. We verify asset potential and specific</p>
-                  <p className="text-muted-foreground leading-relaxed">levels to ensure every introduction is a qualified opportunity, not a tire-kicker.</p>
+                  <p className="text-muted-foreground leading-relaxed">{t.solutions.steps.filter.p1}</p>
+                  <p className="text-muted-foreground leading-relaxed">{t.solutions.steps.filter.p2}</p>
                 </div>
               </div>
             </Card>
@@ -80,11 +79,11 @@ const SolutionsSection = () => {
                 </div>
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-xl md:text-2xl text-blue-accent">The Handoff</h3>
-                    <span className="px-3 py-1 bg-gradient-to-r from-primary/10 to-blue-accent/10 text-primary text-sm font-medium rounded-full border border-primary/20">Connect</span>
+                    <h3 className="text-xl md:text-2xl text-blue-accent">{t.solutions.steps.handoff.title}</h3>
+                    <span className="px-3 py-1 bg-gradient-to-r from-primary/10 to-blue-accent/10 text-primary text-sm font-medium rounded-full border border-primary/20">{t.solutions.steps.handoff.tag}</span>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">We position you as the exclusive authority for</p>
-                  <p className="text-muted-foreground leading-relaxed">You receive the introduction only when the business owner is ready to discuss strategy.</p>
+                  <p className="text-muted-foreground leading-relaxed">{t.solutions.steps.handoff.p1}</p>
+                  <p className="text-muted-foreground leading-relaxed">{t.solutions.steps.handoff.p2}</p>
                 </div>
               </div>
             </Card>
@@ -95,7 +94,7 @@ const SolutionsSection = () => {
         <div className="text-center mt-16 animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <div className="inline-flex items-center gap-4 glass-modern rounded-full px-8 py-4 border border-white/20">
             <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-blue-accent">System Active • Monitoring 847 Potential Opportunities</span>
+            <span className="text-sm font-medium text-blue-accent">{t.solutions.systemActive}</span>
           </div>
         </div>
       </div>
@@ -104,3 +103,4 @@ const SolutionsSection = () => {
 };
 
 export default SolutionsSection;
+import { useT } from "../hooks/use-t";

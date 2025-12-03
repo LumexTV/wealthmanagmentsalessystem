@@ -3,21 +3,18 @@ import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Switch } from "./ui/switch";
 import { useLocale } from "../hooks/use-locale";
+import { useT } from "../hooks/use-t";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { locale, setLocale } = useLocale();
-
-  const labels = {
-    en: { home: "Home", infrastructure: "Infrastructure", partnership: "Partnership", contact: "Contact", cta: "Get Started" },
-    de: { home: "Start", infrastructure: "Infrastruktur", partnership: "Partnerschaft", contact: "Kontakt", cta: "Loslegen" },
-  } as const;
+  const t = useT();
 
   const navLinks = [
-    { name: labels[locale].home, href: "/#hero" },
-    { name: labels[locale].infrastructure, href: "/#mechanism" },
-    { name: labels[locale].partnership, href: "/#offer" },
-    { name: labels[locale].contact, href: "/#contact" },
+    { name: t.navbar.home, href: "/#hero" },
+    { name: t.navbar.infrastructure, href: "/#mechanism" },
+    { name: t.navbar.partnership, href: "/#offer" },
+    { name: t.navbar.contact, href: "/#contact" },
   ];
 
   return (
@@ -58,7 +55,7 @@ const Navbar = () => {
                 window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
               }}
             >
-              {labels[locale].cta}
+              {t.navbar.cta}
             </Button>
             <a href="/#hero" className="flex items-center">
               <span className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Martic Solutions</span>

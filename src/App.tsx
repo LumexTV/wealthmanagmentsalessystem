@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import LangPage, { RootRedirect } from "./pages/LangPage";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import LegalNotice from "./pages/LegalNotice";
@@ -22,7 +23,8 @@ const App = () => (
       <LocaleProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
+          <Route path="/" element={<RootRedirect />} />
+          <Route path=":lang" element={<LangPage />} />
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="/legal-notice" element={<LegalNotice />} />
