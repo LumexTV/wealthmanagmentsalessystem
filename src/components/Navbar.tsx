@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
+import { Switch } from "./ui/switch";
 import { useLocale } from "../hooks/use-locale";
 
 const Navbar = () => {
@@ -42,28 +42,15 @@ const Navbar = () => {
 
           {/* Logo and CTA Button - Right side */}
           <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
-            <ToggleGroup
-              aria-label="Language"
-              type="single"
-              value={locale}
-              onValueChange={(v) => v && setLocale(v as "en" | "de")}
-              variant="outline"
-              size="sm"
-              className="hidden md:flex h-9 w-28 rounded-full border border-gray-300 bg-white px-1"
-            >
-              <ToggleGroupItem
-                value="en"
-                className="rounded-full text-xs font-medium tracking-wide text-gray-700 hover:bg-gray-100 transition-colors data-[state=on]:bg-gray-900 data-[state=on]:text-white"
-              >
-                EN
-              </ToggleGroupItem>
-              <ToggleGroupItem
-                value="de"
-                className="rounded-full text-xs font-medium tracking-wide text-gray-700 hover:bg-gray-100 transition-colors data-[state=on]:bg-gray-900 data-[state=on]:text-white"
-              >
-                DE
-              </ToggleGroupItem>
-            </ToggleGroup>
+            <div className="hidden md:flex items-center gap-2">
+              <span className="text-xs font-medium text-gray-600">EN</span>
+              <Switch
+                checked={locale === "de"}
+                onCheckedChange={(checked) => setLocale(checked ? "de" : "en")}
+                className="h-6 w-11"
+              />
+              <span className="text-xs font-medium text-gray-600">DE</span>
+            </div>
             <Button 
               size="sm" 
               className="hidden md:flex h-9 w-28 justify-center whitespace-nowrap text-sm px-4 rounded-full hover-glow transition-all bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
@@ -105,18 +92,15 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex items-center justify-center py-2">
-              <ToggleGroup
-                aria-label="Language"
-                type="single"
-                value={locale}
-                onValueChange={(v) => v && setLocale(v as "en" | "de")}
-                variant="outline"
-                size="sm"
-                className="h-9 w-28 rounded-full border border-gray-300 bg-white px-1"
-              >
-                <ToggleGroupItem value="en" className="rounded-full text-xs font-medium tracking-wide text-gray-700 hover:bg-gray-100 transition-colors data-[state=on]:bg-gray-900 data-[state=on]:text-white">EN</ToggleGroupItem>
-                <ToggleGroupItem value="de" className="rounded-full text-xs font-medium tracking-wide text-gray-700 hover:bg-gray-100 transition-colors data-[state=on]:bg-gray-900 data-[state=on]:text-white">DE</ToggleGroupItem>
-              </ToggleGroup>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-medium text-gray-600">EN</span>
+                <Switch
+                  checked={locale === "de"}
+                  onCheckedChange={(checked) => setLocale(checked ? "de" : "en")}
+                  className="h-6 w-11"
+                />
+                <span className="text-xs font-medium text-gray-600">DE</span>
+              </div>
             </div>
             <Button 
               size="sm" 
