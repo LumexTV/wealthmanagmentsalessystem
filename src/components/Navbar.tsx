@@ -42,9 +42,26 @@ const Navbar = () => {
 
           {/* Logo and CTA Button - Right side */}
           <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
-            <ToggleGroup type="single" value={locale} onValueChange={(v) => v && setLocale(v as "en" | "de")} variant="outline" size="sm" className="hidden md:flex bg-white rounded-full p-1 border">
-              <ToggleGroupItem value="en" className="rounded-full">EN</ToggleGroupItem>
-              <ToggleGroupItem value="de" className="rounded-full">DE</ToggleGroupItem>
+            <ToggleGroup
+              type="single"
+              value={locale}
+              onValueChange={(v) => v && setLocale(v as "en" | "de")}
+              variant="outline"
+              size="sm"
+              className="hidden md:flex h-9 w-28 rounded-full border border-gray-200 bg-white/90 backdrop-blur px-1 shadow-sm"
+            >
+              <ToggleGroupItem
+                value="en"
+                className="rounded-full text-xs font-semibold tracking-wide text-gray-700 data-[state=on]:bg-gray-900 data-[state=on]:text-white"
+              >
+                EN
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="de"
+                className="rounded-full text-xs font-semibold tracking-wide text-gray-700 data-[state=on]:bg-gray-900 data-[state=on]:text-white"
+              >
+                DE
+              </ToggleGroupItem>
             </ToggleGroup>
             <Button 
               size="sm" 
@@ -87,9 +104,16 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex items-center justify-center py-2">
-              <ToggleGroup type="single" value={locale} onValueChange={(v) => v && setLocale(v as "en" | "de")} variant="outline" size="sm" className="w-full">
-                <ToggleGroupItem value="en" className="flex-1">English</ToggleGroupItem>
-                <ToggleGroupItem value="de" className="flex-1">Deutsch</ToggleGroupItem>
+              <ToggleGroup
+                type="single"
+                value={locale}
+                onValueChange={(v) => v && setLocale(v as "en" | "de")}
+                variant="outline"
+                size="sm"
+                className="h-9 w-28 rounded-full border border-gray-200 bg-white/90 px-1 shadow-sm"
+              >
+                <ToggleGroupItem value="en" className="rounded-full text-xs font-semibold tracking-wide text-gray-700 data-[state=on]:bg-gray-900 data-[state=on]:text-white">EN</ToggleGroupItem>
+                <ToggleGroupItem value="de" className="rounded-full text-xs font-semibold tracking-wide text-gray-700 data-[state=on]:bg-gray-900 data-[state=on]:text-white">DE</ToggleGroupItem>
               </ToggleGroup>
             </div>
             <Button 
