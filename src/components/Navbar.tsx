@@ -47,7 +47,7 @@ const Navbar = () => {
               <Switch
                 checked={locale === "de"}
                 onCheckedChange={(checked) => setLocale(checked ? "de" : "en")}
-                className="h-6 w-11"
+                className="h-6 w-11 data-[state=unchecked]:bg-gray-900 data-[state=checked]:bg-primary"
               />
               <span className="text-xs font-medium text-gray-600">DE</span>
             </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 <Switch
                   checked={locale === "de"}
                   onCheckedChange={(checked) => setLocale(checked ? "de" : "en")}
-                  className="h-6 w-11"
+                  className="h-6 w-11 data-[state=unchecked]:bg-gray-900 data-[state=checked]:bg-primary"
                 />
                 <span className="text-xs font-medium text-gray-600">DE</span>
               </div>
