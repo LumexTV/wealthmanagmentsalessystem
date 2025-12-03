@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { ToggleGroup, ToggleGroupItem } from "./ui/toggle-group";
 import { useLocale } from "../hooks/use-locale";
 
 const Navbar = () => {
@@ -42,19 +42,10 @@ const Navbar = () => {
 
           {/* Logo and CTA Button - Right side */}
           <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="hidden md:flex rounded-full">
-                  {locale === "en" ? "EN" : "DE"}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuRadioGroup value={locale} onValueChange={(v) => setLocale(v as "en" | "de")}>
-                  <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="de">Deutsch</DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <ToggleGroup type="single" value={locale} onValueChange={(v) => v && setLocale(v as "en" | "de")} variant="outline" size="sm" className="hidden md:flex bg-white rounded-full p-1 border">
+              <ToggleGroupItem value="en" className="rounded-full">EN</ToggleGroupItem>
+              <ToggleGroupItem value="de" className="rounded-full">DE</ToggleGroupItem>
+            </ToggleGroup>
             <Button 
               size="sm" 
               className="hidden md:flex text-sm px-4 py-2 rounded-full hover-glow transition-all bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
@@ -95,20 +86,11 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <div className="flex items-center gap-3">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="sm" className="rounded-full w-full">
-                    {locale === "en" ? "English" : "Deutsch"}
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
-                  <DropdownMenuRadioGroup value={locale} onValueChange={(v) => setLocale(v as "en" | "de")}>
-                    <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="de">Deutsch</DropdownMenuRadioItem>
-                  </DropdownMenuRadioGroup>
-                </DropdownMenuContent>
-              </DropdownMenu>
+            <div className="flex items-center justify-center py-2">
+              <ToggleGroup type="single" value={locale} onValueChange={(v) => v && setLocale(v as "en" | "de")} variant="outline" size="sm" className="w-full">
+                <ToggleGroupItem value="en" className="flex-1">English</ToggleGroupItem>
+                <ToggleGroupItem value="de" className="flex-1">Deutsch</ToggleGroupItem>
+              </ToggleGroup>
             </div>
             <Button 
               size="sm" 
