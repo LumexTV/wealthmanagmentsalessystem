@@ -18,6 +18,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Navigation Links - Left side */}
           <div className="hidden md:flex items-center gap-8">
+            <a href="/#hero" className="flex items-center">
+              <img src="/images/biglogonobg.png" alt="Martic Solutions" className="h-6 w-auto" />
+            </a>
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -35,7 +38,7 @@ const Navbar = () => {
               size="sm" 
               className="hidden md:flex text-sm px-4 py-2 rounded-full hover-glow transition-all bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
               onClick={() => {
-                window.location.href = 'https://cal.com/marticsolutions/get-started';
+                window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
               }}
             >
               Get Started
@@ -75,7 +78,7 @@ const Navbar = () => {
               size="sm" 
               className="w-full text-sm px-4 py-2 rounded-full hover-glow transition-all mt-4 bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
               onClick={() => {
-                window.location.href = 'https://cal.com/marticsolutions/get-started';
+                window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
                 setIsOpen(false);
               }}
             >

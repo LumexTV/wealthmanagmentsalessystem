@@ -1,19 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://kynova.de/sitemap.xml
+# Block build assets folders if needed
+Disallow: /assets/
 
-# Crawl-delay
-Crawl-delay: 1
+Sitemap: https://www.marticsolutions.com/sitemap.xml
 
-# Disallow admin areas (if any)
-Disallow: /admin/
-Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
-
-# Allow important pages
-Allow: /impressum
-Allow: /datenschutz
-Allow: /images/

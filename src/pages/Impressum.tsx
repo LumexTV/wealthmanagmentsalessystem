@@ -37,7 +37,7 @@ const Impressum = () => {
                     
                     <div className="space-y-2">
                       <p><span className="font-semibold text-foreground">Telefon:</span> +49 176 47663929</p>
-                      <p><span className="font-semibold text-foreground">E-Mail:</span> <a href="mailto:info@kynova.de" className="text-primary hover:underline">info@kynova.de</a></p>
+                      <p><span className="font-semibold text-foreground">E-Mail:</span> <a href="mailto:luka@marticsolutions.com" className="text-primary hover:underline">luka@marticsolutions.com</a></p>
                       <p><span className="font-semibold text-foreground">Website:</span> <a href="https://kynova.de" className="text-primary hover:underline">WWW.KYNOVA.DE</a></p>
                     </div>
                     
@@ -96,7 +96,7 @@ const Impressum = () => {
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-foreground">Kontakt für Impressumsanfragen</h3>
                       <p>Luka Martic/Daniel Schmuch</p>
-                      <p><span className="font-semibold text-foreground">E-Mail:</span> <a href="mailto:info@kynova.de" className="text-primary hover:underline">info@kynova.de</a></p>
+                      <p><span className="font-semibold text-foreground">E-Mail:</span> <a href="mailto:luka@marticsolutions.com" className="text-primary hover:underline">luka@marticsolutions.com</a></p>
                     </div>
                   </div>
                 </div>

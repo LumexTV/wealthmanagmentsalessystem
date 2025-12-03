@@ -37,7 +37,7 @@ const Datenschutz = () => {
                       <p>Wesselstraße 10</p>
                       <p>22399 Hamburg</p>
                       <p>Deutschland</p>
-                      <p><span className="font-semibold text-foreground">E-Mail:</span> <a href="mailto:info@kynova.de" className="text-primary hover:underline">info@kynova.de</a></p>
+                      <p><span className="font-semibold text-foreground">E-Mail:</span> <a href="mailto:luka@marticsolutions.com" className="text-primary hover:underline">luka@marticsolutions.com</a></p>
                     </div>
                   </div>
                 </div>
@@ -217,7 +217,7 @@ const Datenschutz = () => {
                   <h2 className="text-2xl font-bold mb-4 text-foreground">Kontakt für Datenschutzanfragen</h2>
                   <div className="text-muted-foreground space-y-2">
                     <p className="font-semibold text-foreground">Luka Martic</p>
-                    <p><span className="font-semibold text-foreground">E-Mail:</span> <a href="mailto:info@kynova.de" className="text-primary hover:underline">info@kynova.de</a></p>
+                    <p><span className="font-semibold text-foreground">E-Mail:</span> <a href="mailto:luka@marticsolutions.com" className="text-primary hover:underline">luka@marticsolutions.com</a></p>
                   </div>
                 </div>
               </div>
