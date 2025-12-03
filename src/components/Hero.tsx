@@ -21,7 +21,7 @@ const Hero = () => {
           </Button>
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight mb-8 max-w-4xl mx-auto leading-[1.15] pb-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          Stop Chasing Referrals. Own the Profit Extraction Pipeline.
+          Own the Dealflow That Competitors Never See.
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
           While competitors chase the same referrals, you’ll access an exclusive pipeline of founder‑operators in active liquidity events - ready for capital preservation and strategic deployment.
