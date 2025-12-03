@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { useLocale } from "../hooks/use-locale";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { locale, setLocale } = useLocale();
+
+  const labels = {
+    en: { home: "Home", infrastructure: "Infrastructure", partnership: "Partnership", contact: "Contact", cta: "Get Started" },
+    de: { home: "Start", infrastructure: "Infrastruktur", partnership: "Partnerschaft", contact: "Kontakt", cta: "Loslegen" },
+  } as const;
 
   const navLinks = [
-    { name: "Home", href: "/#hero" },
-    { name: "Infrastructure", href: "/#mechanism" },
-    { name: "Partnership", href: "/#offer" },
-    { name: "Contact", href: "/#contact" },
+    { name: labels[locale].home, href: "/#hero" },
+    { name: labels[locale].infrastructure, href: "/#mechanism" },
+    { name: labels[locale].partnership, href: "/#offer" },
+    { name: labels[locale].contact, href: "/#contact" },
   ];
 
   return (
@@ -34,6 +42,19 @@ const Navbar = () => {
 
           {/* Logo and CTA Button - Right side */}
           <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="hidden md:flex rounded-full">
+                  {locale === "en" ? "EN" : "DE"}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuRadioGroup value={locale} onValueChange={(v) => setLocale(v as "en" | "de")}>
+                  <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="de">Deutsch</DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button 
               size="sm" 
               className="hidden md:flex text-sm px-4 py-2 rounded-full hover-glow transition-all bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
@@ -41,7 +62,7 @@ const Navbar = () => {
                 window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
               }}
             >
-              Get Started
+              {labels[locale].cta}
             </Button>
             <a href="/#hero" className="flex items-center">
               <span className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Martic Solutions</span>
@@ -74,6 +95,21 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            <div className="flex items-center gap-3">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm" className="rounded-full w-full">
+                    {locale === "en" ? "English" : "Deutsch"}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start">
+                  <DropdownMenuRadioGroup value={locale} onValueChange={(v) => setLocale(v as "en" | "de")}>
+                    <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="de">Deutsch</DropdownMenuRadioItem>
+                  </DropdownMenuRadioGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
             <Button 
               size="sm" 
               className="w-full text-sm px-4 py-2 rounded-full hover-glow transition-all mt-4 bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
@@ -82,7 +118,7 @@ const Navbar = () => {
                 setIsOpen(false);
               }}
             >
-              Get Started
+              {labels[locale].cta}
             </Button>
           </div>
         </div>
