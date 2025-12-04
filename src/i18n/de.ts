@@ -55,7 +55,7 @@ export const de = {
     systemActive: "System aktiv • Überwachung von 847 potenziellen Chancen",
   },
   about: {
-    title: "Partnerschaft mit Martic Solutions.",
+    title: "Partnerschaft mit Martic Capital.",
     performance: "Leistungsgarantie",
     blurb:
       "Wir implementieren unser Owner‑Direct Acquisition System, um innerhalb von 90 Tagen 4–5 qualifizierte Strategie‑Gespräche mit liquiden Unternehmern zu realisieren.",
@@ -77,7 +77,7 @@ export const de = {
     connect: "Kontakt",
     contactUs: "Kontakt aufnehmen",
     strategyCall: "Strategiegespräch",
-    company: "Martic Solutions",
+    company: "Martic Capital",
     companyDesc:
       "Wir verbinden unabhängige Vermögensverwalter mit solventen Unternehmern durch programmatische Mandatsgewinnung.",
     services: "Leistungen",
@@ -87,6 +87,6 @@ export const de = {
     legal: "Rechtliche Hinweise",
     privacy: "Datenschutz",
     terms: "AGB",
-    copyright: (year: number) => `Copyright © ${year} Martic Solutions. Alle Rechte vorbehalten.`,
+    copyright: (year: number) => `Copyright © ${year} Martic Capital. Alle Rechte vorbehalten.`,
   },
 };

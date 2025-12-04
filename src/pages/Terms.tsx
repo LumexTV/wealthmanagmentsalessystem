@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const Terms = () => {
   useEffect(() => {
-    document.title = "Terms of Service & Disclaimer — Martic Solutions";
+    document.title = "Terms of Service & Disclaimer — Martic Capital";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Terms governing B2B services: no result guarantees, liability limitations, external links, booking & payment, governing law Hamburg.");
     const canonical = document.querySelector('link[rel="canonical"]');
@@ -25,7 +25,7 @@ const Terms = () => {
             <div className="prose prose-lg max-w-none animate-slide-up" style={{ animationDelay: '0.1s' }}>
               <div className="bg-muted/30 rounded-lg p-8 space-y-8">
                 <h2 className="text-foreground text-2xl font-semibold">1. Scope of Application</h2>
-                <p className="text-muted-foreground">These Terms govern the use of marticsolutions.com and the business relationship between Martic Solutions ("Agency") and its business clients ("Client"). Services are provided exclusively B2B.</p>
+                <p className="text-muted-foreground">These Terms govern the use of marticsolutions.com and the business relationship between Martic Capital ("Agency") and its business clients ("Client"). Services are provided exclusively B2B.</p>
 
                 <h2 className="text-foreground text-2xl font-semibold">2. Nature of Services (No Guarantee of Results)</h2>
                 <p className="text-muted-foreground">The Agency provides lead generation and appointment setting services. We provide the Client with the opportunity to hold sales conversations with potential leads. We expressly do not guarantee closed deals, signed contracts, or specific revenue figures. Conversion depends on the Client’s own sales skills, offer, and market conditions. Unless explicitly agreed in writing, we do not perform sales closing for the Client.</p>

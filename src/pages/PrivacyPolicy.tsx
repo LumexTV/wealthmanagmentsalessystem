@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
-    document.title = "Privacy Policy — Martic Solutions";
+    document.title = "Privacy Policy — Martic Capital";
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", "Privacy policy covering hosting logs, appointment scheduling providers, international data transfers, and GDPR/CCPA rights.");
     const canonical = document.querySelector('link[rel="canonical"]');
@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
                 <p className="text-muted-foreground">We take the protection of your personal data seriously. This Privacy Policy explains how we collect, use, and protect your information when you visit our website. As a German company, we adhere to the GDPR and respect applicable US privacy laws (such as the CCPA/CPRA).</p>
 
                 <h2 className="text-foreground text-2xl font-semibold">2. Controller</h2>
-                <p className="text-muted-foreground">Luka Martic (Martic Solutions), Wesselstraße 10, 22399 Hamburg, Germany, <a href="mailto:luka@marticsolutions.com" className="text-primary hover:underline">luka@marticsolutions.com</a></p>
+                <p className="text-muted-foreground">Luka Martic (Martic Capital), Wesselstraße 10, 22399 Hamburg, Germany, <a href="mailto:luka@marticsolutions.com" className="text-primary hover:underline">luka@marticsolutions.com</a></p>
 
                 <h2 className="text-foreground text-2xl font-semibold">3. No Tracking Cookies & No Analytics</h2>
                 <p className="text-muted-foreground">We do not use third‑party tracking cookies, advertising pixels (e.g., Meta Pixel), or analytics software (e.g., Google Analytics) on this website.</p>

@@ -40,7 +40,7 @@ export const en = {
     systemActive: "System Active • Monitoring 847 Potential Opportunities",
   },
   about: {
-    title: "Partner with Martic Solutions.",
+    title: "Partner with Martic Capital.",
     performance: "Performance Guarantee",
     blurb:
       "We deploy our Owner‑Direct Acquisition System to secure 4–5 qualified strategy consultations with founder‑operators in active liquidity events within 90 days.",
@@ -62,7 +62,7 @@ export const en = {
     connect: "Connect",
     contactUs: "Contact Us",
     strategyCall: "Strategy Call",
-    company: "Martic Solutions",
+    company: "Martic Capital",
     companyDesc:
       "Connecting independent wealth managers with founder‑operators through programmatic capital sourcing.",
     services: "Services",
@@ -72,7 +72,6 @@ export const en = {
     legal: "Legal Notice",
     privacy: "Privacy",
     terms: "Terms",
-    copyright: (year: number) => `Copyright © ${year} Martic Solutions. All Rights Reserved.`,
+    copyright: (year: number) => `Copyright © ${year} Martic Capital. All Rights Reserved.`,
   },
 };
-

@@ -4,9 +4,9 @@ import { useEffect } from "react";
 
 const LegalNotice = () => {
   useEffect(() => {
-    document.title = "Legal Notice — Martic Solutions";
+    document.title = "Legal Notice — Martic Capital";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Information according to § 5 TMG for Martic Solutions, including contact, VAT ID, and legal disclaimers.");
+    if (meta) meta.setAttribute("content", "Information according to § 5 TMG for Martic Capital, including contact, VAT ID, and legal disclaimers.");
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute("href", "https://www.marticsolutions.com/legal-notice");
   }, []);

@@ -23,7 +23,7 @@ const Navbar = () => {
           {/* Navigation Links - Left side */}
           <div className="hidden md:flex items-center gap-8">
             <a href="/#hero" className="flex items-center">
-              <img src="/images/biglogonobg.png" alt="Martic Solutions" className="h-6 w-auto" />
+              <img src="/images/biglogonobg.png" alt="Martic Capital" className="h-6 w-auto" />
             </a>
             {navLinks.map((link) => (
               <a
@@ -49,7 +49,7 @@ const Navbar = () => {
               {t.navbar.cta}
             </Button>
             <a href="/#hero" className="flex items-center">
-              <span className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Martic Solutions</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Martic Capital</span>
             </a>
           </div>
 
