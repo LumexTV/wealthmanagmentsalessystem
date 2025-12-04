@@ -13,10 +13,8 @@ export const LocaleProvider = ({ children }: { children: React.ReactNode }) => {
   const [locale, setLocale] = useState<Locale>("en");
 
   useEffect(() => {
-    const saved = localStorage.getItem("locale") as Locale | null;
-    if (saved === "en" || saved === "de") {
-      setLocale(saved);
-    }
+    setLocale("en");
+    localStorage.setItem("locale", "en");
   }, []);
 
   const value = useMemo(
@@ -38,4 +36,3 @@ export const useLocale = () => {
   if (!ctx) throw new Error("useLocale must be used within LocaleProvider");
   return ctx;
 };
-

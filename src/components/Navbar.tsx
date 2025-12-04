@@ -1,23 +1,19 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { Switch } from "./ui/switch";
 import { useLocale } from "../hooks/use-locale";
 import { useT } from "../hooks/use-t";
-import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { locale, setLocale } = useLocale();
+  const { locale } = useLocale();
   const t = useT();
-  const navigate = useNavigate();
 
-  const prefix = `/${locale}`;
   const navLinks = [
-    { name: t.navbar.home, href: `${prefix}#hero` },
-    { name: t.navbar.infrastructure, href: `${prefix}#mechanism` },
-    { name: t.navbar.partnership, href: `${prefix}#offer` },
-    { name: t.navbar.contact, href: `${prefix}#contact` },
+    { name: t.navbar.home, href: `/#hero` },
+    { name: t.navbar.infrastructure, href: `/#mechanism` },
+    { name: t.navbar.partnership, href: `/#offer` },
+    { name: t.navbar.contact, href: `/#contact` },
   ];
 
   return (
@@ -26,7 +22,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Navigation Links - Left side */}
           <div className="hidden md:flex items-center gap-8">
-            <a href={`${prefix}#hero`} className="flex items-center">
+            <a href="/#hero" className="flex items-center">
               <img src="/images/biglogonobg.png" alt="Martic Solutions" className="h-6 w-auto" />
             </a>
             {navLinks.map((link) => (
@@ -42,19 +38,7 @@ const Navbar = () => {
 
           {/* Logo and CTA Button - Right side */}
           <div className="flex-1 md:flex-none flex items-center justify-end gap-4">
-            <div className="hidden md:flex items-center gap-2">
-              <span className="text-xs font-medium text-gray-600">EN</span>
-              <Switch
-                checked={locale === "de"}
-                onCheckedChange={(checked) => {
-                  const next = checked ? "de" : "en";
-                  setLocale(next);
-                  navigate(`/${next}`);
-                }}
-                className="h-6 w-11 data-[state=unchecked]:bg-gray-900 data-[state=checked]:bg-primary"
-              />
-              <span className="text-xs font-medium text-gray-600">DE</span>
-            </div>
+            {/* language switch removed */}
             <Button 
               size="sm" 
               className="hidden md:flex h-9 w-28 justify-center whitespace-nowrap text-sm px-4 rounded-full hover-glow transition-all bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
@@ -64,7 +48,7 @@ const Navbar = () => {
             >
               {t.navbar.cta}
             </Button>
-            <a href={`${prefix}#hero`} className="flex items-center">
+            <a href="/#hero" className="flex items-center">
               <span className="text-xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">Martic Solutions</span>
             </a>
           </div>
@@ -95,21 +79,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <div className="flex items-center justify-center py-2">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-medium text-gray-600">EN</span>
-                <Switch
-                  checked={locale === "de"}
-                  onCheckedChange={(checked) => {
-                    const next = checked ? "de" : "en";
-                    setLocale(next);
-                    navigate(`/${next}`);
-                  }}
-                  className="h-6 w-11 data-[state=unchecked]:bg-gray-900 data-[state=checked]:bg-primary"
-                />
-                <span className="text-xs font-medium text-gray-600">DE</span>
-              </div>
-            </div>
+            {/* language switch removed in mobile */}
             <Button 
               size="sm" 
               className="w-full text-sm px-4 py-2 rounded-full hover-glow transition-all mt-4 bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
