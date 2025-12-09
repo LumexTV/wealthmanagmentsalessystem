@@ -7,7 +7,7 @@ export const en = {
     cta: "Get Started",
   },
   hero: {
-    badge: "2 Spots Remaining for Q1 2025",
+    badge: "2 Spots Remaining for Q1 2026",
     headline: "Own the Dealflow That Competitors Never See.",
     subline:
       "While competitors chase the same referrals, you’ll access an exclusive pipeline of founder‑operators in active liquidity events - ready for capital preservation and strategic deployment.",
