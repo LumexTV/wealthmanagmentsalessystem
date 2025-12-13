@@ -43,7 +43,7 @@ const Navbar = () => {
               size="sm" 
               className="hidden md:flex h-9 w-28 justify-center whitespace-nowrap text-sm px-4 rounded-full hover-glow transition-all bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
               onClick={() => {
-                window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
+                window.location.href = 'https://cal.com/timeslot/intro-call-40mins';
               }}
             >
               {t.navbar.cta}
@@ -84,7 +84,7 @@ const Navbar = () => {
               size="sm" 
               className="w-full text-sm px-4 py-2 rounded-full hover-glow transition-all mt-4 bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70"
               onClick={() => {
-                window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
+                window.location.href = 'https://cal.com/timeslot/intro-call-40mins';
                 setIsOpen(false);
               }}
             >

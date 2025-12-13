@@ -10,7 +10,7 @@ const Footer = () => {
           <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.1] pb-1 bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">{t.footer.heading}</h3>
           <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">{t.footer.subheading}</p>
           <a
-            href="https://cal.com/marticsolutions/intro-call-40mins"
+            href="https://cal.com/timeslot/intro-call-40mins"
             className="inline-flex items-center justify-center h-14 px-12 rounded-full bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70 transition-all duration-300 text-lg font-semibold shadow-premium hover-glow"
           >
             {t.footer.cta}
@@ -35,7 +35,7 @@ const Footer = () => {
               <h4 className="font-semibold text-slate-900 mb-5">{t.footer.connect}</h4>
               <ul className="space-y-3 text-sm">
                 <li><a href="mailto:luka@marticsolutions.com" className="text-slate-600 hover:text-slate-900 transition-colors">{t.footer.contactUs}</a></li>
-                <li><a href="https://cal.com/marticsolutions/intro-call-40mins" className="text-slate-600 hover:text-slate-900 transition-colors">{t.footer.strategyCall}</a></li>
+                <li><a href="https://cal.com/timeslot/intro-call-40mins" className="text-slate-600 hover:text-slate-900 transition-colors">{t.footer.strategyCall}</a></li>
               </ul>
             </div>
             {/* Martic Solutions (Middle) */}

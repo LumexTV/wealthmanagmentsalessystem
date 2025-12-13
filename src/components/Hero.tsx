@@ -34,7 +34,7 @@ const Hero = () => {
             className="group text-lg h-12 w-56 whitespace-nowrap rounded-full hover-glow transition-all duration-300 hover:scale-105 shadow-premium bg-gradient-to-r from-primary to-primary/80 text-white font-semibold premium-border"
             style={{ boxShadow: 'var(--shadow-md)' }}
             onClick={() => {
-              window.location.href = 'https://cal.com/marticsolutions/intro-call-40mins';
+              window.location.href = 'https://cal.com/timeslot/intro-call-40mins';
             }}
           >
             {t.hero.cta_book}

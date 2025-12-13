@@ -39,7 +39,7 @@ const AboutSection = () => {
           <div className="text-center">
             <p className="text-sm text-white/80 mb-8">{t.about.guarantee}</p>
             <a
-              href="https://cal.com/marticsolutions/intro-call-40mins"
+              href="https://cal.com/timeslot/intro-call-40mins"
               className="inline-flex items-center justify-center h-14 px-12 rounded-full bg-gradient-to-r from-primary to-primary/80 text-white hover:from-primary/90 hover:to-primary/70 transition-all duration-300 text-lg font-semibold shadow-premium hover-glow premium-border"
             >
               {t.about.cta}
